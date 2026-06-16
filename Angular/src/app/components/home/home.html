@@ -1,0 +1,35 @@
+<p>home works!</p>
+{{title}}
+<div *ngFor="let usuario of usuarios">
+   {{usuario.nombre}} 
+   <div *ngIf="usuario.nombre == "Adrian" : else noIdentificado">
+    <h1>El programador</h1>
+   </div>
+   <ng-component #noIdentificado>
+    <p>No es Adrian</p>
+   </ng-component>
+</div>
+
+<input type="text" [(ngModel)]="title">
+<br><br>
+<input type="button" value="darle click" (click)="onClick()">
+
+<br><br>
+<input type="text" (blur)="onblur()" (keyup.enter)="onkey()">
+<br><br>
+<input type="text" [(ngModel)="color"]>
+<ul [ngSwitch]="color">
+
+   <li *ngSwitchCase="'yellow'">
+      El color predominante es el <span[ngStyle="('bacjground': color)">amrariilo</span>
+   </li>
+     <li *ngSwitchCase="'red'">
+      El color predominante es el <span[ngStyle="('bacjground': color)">rojo</span>
+   </li>
+     <li *ngSwitchCase="'blue'">
+      El color predominante es el <span[ngStyle="('bacjground': color)">azul</span>
+   </li>
+     <li *ngSwitchCase="'orange'">
+      El color predominante es el <span[ngStyle="('bacjground': color)">naranja</span>
+   </li>
+</ul>
